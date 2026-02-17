@@ -1,0 +1,12 @@
+topic: common_fixes
+entries:
+  - id: restart_spooler
+    symptoms: "Queue not processing jobs"
+    probable_cause: "Spooler deadlock"
+    recommended_fix_steps:
+      - "Restart spooler from services console or PowerShell."
+  - id: clear_queue
+    symptoms: "One job blocks all others"
+    probable_cause: "Corrupted queue data"
+    recommended_fix_steps:
+      - "Stop spooler, clear spool folder, start spooler."
