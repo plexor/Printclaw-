@@ -1,0 +1,14 @@
+topic: windows_spooler
+entries:
+  - id: spooler_stopped
+    symptoms: "No jobs leave queue and all prints stay pending."
+    probable_cause: "Spooler service is stopped or disabled."
+    recommended_fix_steps:
+      - "Start spooler service and set startup to Automatic."
+      - "Re-run print test page."
+  - id: spooler_crash
+    symptoms: "Spooler repeatedly crashes in Event Viewer."
+    probable_cause: "Faulty or incompatible driver component."
+    recommended_fix_steps:
+      - "Update or rollback printer driver."
+      - "Isolate third-party print processors."
