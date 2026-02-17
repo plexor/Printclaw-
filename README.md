@@ -28,6 +28,33 @@ poetry run printclaw web
 ```
 Open `http://127.0.0.1:8080`.
 
+## Docker Compose Setup and Run
+
+Use Docker Compose if you want a containerized local run without managing a Poetry environment.
+
+### 1) Build and start
+```bash
+docker compose up --build
+```
+
+### 2) Open the app
+Go to `http://127.0.0.1:8080`.
+
+### 3) Stop containers
+```bash
+docker compose down
+```
+
+### 4) Optional: run in background
+```bash
+docker compose up --build -d
+```
+
+### 5) Optional: view logs
+```bash
+docker compose logs -f
+```
+
 ## Run CLI Diagnostics
 ```bash
 poetry run printclaw diagnose --export json
