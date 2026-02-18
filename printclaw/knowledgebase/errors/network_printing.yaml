@@ -1,0 +1,14 @@
+topic: network_printing
+entries:
+  - id: port_blocked
+    symptoms: "Ping succeeds but print never starts."
+    probable_cause: "Raw printing ports blocked by firewall."
+    recommended_fix_steps:
+      - "Open 9100/515/631 as needed."
+      - "Retest with port check."
+  - id: dns_mismatch
+    symptoms: "Printer appears offline by hostname only."
+    probable_cause: "Stale DNS or wrong reservation."
+    recommended_fix_steps:
+      - "Use static reservation and update DNS entry."
+      - "Flush client DNS cache."
