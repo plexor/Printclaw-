@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+.env
+printclaw.db
+printclaw/reports/*.json
+printclaw/reports/*.md
+printclaw/reports/*.txt
+printclaw/logs/*.log
