@@ -12,6 +12,7 @@ Printclaw is a lightweight local app that diagnoses printer problems, suggests p
 - [Why it exists](#-why-it-exists)
 - [Features](#-features)
 - [Quick Start](#-quick-start)
+- [Prerequisites](#-prerequisites)
 - [Install (Poetry)](#-install-poetry)
 - [Run Web GUI](#-run-web-gui)
 - [Docker Compose Setup and Run](#-docker-compose-setup-and-run)
@@ -74,6 +75,48 @@ poetry run printclaw web
 Then open: <http://127.0.0.1:8080>
 
 ---
+
+## 🧰 Prerequisites
+
+Use the checklist for the run method you want:
+
+### Windows (Poetry / local run)
+
+- Windows 10 or Windows 11
+- Python **3.11+** available in `PATH`
+- [Poetry](https://python-poetry.org/docs/) installed
+- PowerShell available (default on modern Windows)
+- Optional for full Windows skill coverage: run terminal as Administrator when applying fixes
+
+### macOS (Poetry / local run)
+
+- macOS 12+ (Monterey or newer recommended)
+- Python **3.11+** (via Homebrew, pyenv, or python.org installer)
+- [Poetry](https://python-poetry.org/docs/) installed
+- Build tools if needed by dependencies (`xcode-select --install`)
+
+### Linux (Poetry / local run)
+
+- Modern distro (Ubuntu 22.04+, Debian 12+, Fedora 39+, etc.)
+- Python **3.11+**
+- [Poetry](https://python-poetry.org/docs/) installed
+- Typical build/runtime helpers: `pip`, `venv`, and `build-essential`/equivalent
+
+### Docker (cross-platform)
+
+- Docker Engine / Docker Desktop installed
+- Docker Compose V2 (`docker compose` command)
+- Port `8080` free on host
+
+### Network/Printer access prerequisites (all methods)
+
+- Host machine can reach target printer subnet
+- Local firewall allows outbound diagnostics (`ping`, TCP checks)
+- If diagnosing Windows spooler/service state, run on Windows for real native checks
+
+---
+
+## 📦 Install (Poetry)
 
 ## 📦 Install (Poetry)
 
