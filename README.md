@@ -136,7 +136,7 @@ Printer outages are noisy and expensive. Printclaw gives fast, safe, repeatable 
 - Skills system for printer, spooler, queue, and network checks.
 - Knowledgebase search for vendor and error guidance.
 
-## Screenshots (optional placeholder text, but do not break markdown)
+## Screenshots 
 Run the app and capture `/` after diagnostics.
 
 ## Install (Poetry)
