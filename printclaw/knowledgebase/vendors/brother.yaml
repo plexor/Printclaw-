@@ -1,0 +1,92 @@
+vendor: brother
+entries:
+  - id: brother_1
+    model: BROTHER-Series-1
+    symptoms: "Intermittent printing issue 1, queue stalls, and occasional offline state."
+    probable_cause: "Driver mismatch (PCL vs PS), stale queue jobs, or print server mapping drift."
+    recommended_fix_steps:
+      - "Confirm vendor driver package matches device model."
+      - "If port is WSD and unstable, move to Standard TCP/IP."
+      - "Clear queue and restart spooler service."
+      - "Validate print server share permissions and reconnect."
+  - id: brother_2
+    model: BROTHER-Series-2
+    symptoms: "Intermittent printing issue 2, queue stalls, and occasional offline state."
+    probable_cause: "Driver mismatch (PCL vs PS), stale queue jobs, or print server mapping drift."
+    recommended_fix_steps:
+      - "Confirm vendor driver package matches device model."
+      - "If port is WSD and unstable, move to Standard TCP/IP."
+      - "Clear queue and restart spooler service."
+      - "Validate print server share permissions and reconnect."
+  - id: brother_3
+    model: BROTHER-Series-3
+    symptoms: "Intermittent printing issue 3, queue stalls, and occasional offline state."
+    probable_cause: "Driver mismatch (PCL vs PS), stale queue jobs, or print server mapping drift."
+    recommended_fix_steps:
+      - "Confirm vendor driver package matches device model."
+      - "If port is WSD and unstable, move to Standard TCP/IP."
+      - "Clear queue and restart spooler service."
+      - "Validate print server share permissions and reconnect."
+  - id: brother_4
+    model: BROTHER-Series-4
+    symptoms: "Intermittent printing issue 4, queue stalls, and occasional offline state."
+    probable_cause: "Driver mismatch (PCL vs PS), stale queue jobs, or print server mapping drift."
+    recommended_fix_steps:
+      - "Confirm vendor driver package matches device model."
+      - "If port is WSD and unstable, move to Standard TCP/IP."
+      - "Clear queue and restart spooler service."
+      - "Validate print server share permissions and reconnect."
+  - id: brother_5
+    model: BROTHER-Series-5
+    symptoms: "Intermittent printing issue 5, queue stalls, and occasional offline state."
+    probable_cause: "Driver mismatch (PCL vs PS), stale queue jobs, or print server mapping drift."
+    recommended_fix_steps:
+      - "Confirm vendor driver package matches device model."
+      - "If port is WSD and unstable, move to Standard TCP/IP."
+      - "Clear queue and restart spooler service."
+      - "Validate print server share permissions and reconnect."
+  - id: brother_6
+    model: BROTHER-Series-6
+    symptoms: "Intermittent printing issue 6, queue stalls, and occasional offline state."
+    probable_cause: "Driver mismatch (PCL vs PS), stale queue jobs, or print server mapping drift."
+    recommended_fix_steps:
+      - "Confirm vendor driver package matches device model."
+      - "If port is WSD and unstable, move to Standard TCP/IP."
+      - "Clear queue and restart spooler service."
+      - "Validate print server share permissions and reconnect."
+  - id: brother_7
+    model: BROTHER-Series-7
+    symptoms: "Intermittent printing issue 7, queue stalls, and occasional offline state."
+    probable_cause: "Driver mismatch (PCL vs PS), stale queue jobs, or print server mapping drift."
+    recommended_fix_steps:
+      - "Confirm vendor driver package matches device model."
+      - "If port is WSD and unstable, move to Standard TCP/IP."
+      - "Clear queue and restart spooler service."
+      - "Validate print server share permissions and reconnect."
+  - id: brother_8
+    model: BROTHER-Series-8
+    symptoms: "Intermittent printing issue 8, queue stalls, and occasional offline state."
+    probable_cause: "Driver mismatch (PCL vs PS), stale queue jobs, or print server mapping drift."
+    recommended_fix_steps:
+      - "Confirm vendor driver package matches device model."
+      - "If port is WSD and unstable, move to Standard TCP/IP."
+      - "Clear queue and restart spooler service."
+      - "Validate print server share permissions and reconnect."
+  - id: brother_9
+    model: BROTHER-Series-9
+    symptoms: "Intermittent printing issue 9, queue stalls, and occasional offline state."
+    probable_cause: "Driver mismatch (PCL vs PS), stale queue jobs, or print server mapping drift."
+    recommended_fix_steps:
+      - "Confirm vendor driver package matches device model."
+      - "If port is WSD and unstable, move to Standard TCP/IP."
+      - "Clear queue and restart spooler service."
+      - "Validate print server share permissions and reconnect."
+  - id: brother_10
+    model: BROTHER-Series-10
+    symptoms: "Intermittent printing issue 10, queue stalls, and occasional offline state."
+    probable_cause: "Driver mismatch (PCL vs PS), stale queue jobs, or print server mapping drift."
+    recommended_fix_steps:
+      - "Confirm vendor driver package matches device model."
+      - "If port is WSD and unstable, move to Standard TCP/IP."
+      - "Clear queue and restart spooler service."
+      - "Validate print server share permissions and reconnect."

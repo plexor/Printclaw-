@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Printclaw Dashboard</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Printclaw Dashboard</h1>
+    <p>Diagnose printer issues and generate support-ready reports.</p>
+    <div class="card">
+      <label>Printer IP (optional)</label>
+      <input id="targetIp" placeholder="192.168.1.120" />
+      <button id="runBtn">Run Diagnostics</button>
+      <button id="exportBtn">Export Latest Report (JSON)</button>
+      <button id="copySummaryBtn">Copy Ticket Summary</button>
+      <div id="spinner" class="hidden">Running diagnostics...</div>
+    </div>
+    <div class="grid">
+      <section class="card"><h2>Printer list</h2><pre id="printers"></pre></section>
+      <section class="card"><h2>Spooler status</h2><pre id="spooler"></pre></section>
+      <section class="card"><h2>Network test</h2><pre id="network"></pre></section>
+      <section class="card"><h2>Issues found</h2><pre id="issues"></pre></section>
+      <section class="card"><h2>Recommended fixes</h2><pre id="fixes"></pre></section>
+      <section class="card"><h2>Confidence meter</h2><div id="confidence">-</div></section>
+      <section class="card"><h2>Recent sessions</h2><pre id="sessions"></pre></section>
+      <section class="card"><h2>Log preview</h2><pre id="logs"></pre></section>
+    </div>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>
