@@ -13,7 +13,8 @@ Printclaw is a lightweight local app that diagnoses printer problems, suggests p
 - [Features](#-features)
 - [Quick Start](#-quick-start)
 - [Prerequisites](#-prerequisites)
-- [Run Locally (Poetry)](#-run-locally-poetry)
+- [Install (Poetry)](#-install-poetry)
+- [Run Web GUI](#-run-web-gui)
 - [Docker Compose Setup and Run](#-docker-compose-setup-and-run)
 - [Run CLI Diagnostics](#-run-cli-diagnostics)
 - [CLI Command Reference](#-cli-command-reference)
@@ -27,7 +28,6 @@ Printclaw is a lightweight local app that diagnoses printer problems, suggests p
 - [Screenshots](#-screenshots)
 - [Example Ticket Output](#-example-ticket-output)
 - [Roadmap](#-roadmap)
-- [GitHub Pages: Static Landing Page](#-github-pages-static-landing-page)
 - [License](#-license)
 
 ---
@@ -67,22 +67,12 @@ Printer outages are disruptive, expensive, and often repetitive. Printclaw exist
 
 ## 🚀 Quick Start
 
-### Local (Poetry)
-
 ```bash
 poetry install
 poetry run printclaw web
 ```
 
-Open: <http://127.0.0.1:8080>
-
-### Docker Compose
-
-```bash
-docker compose up --build
-```
-
-Open: <http://127.0.0.1:8080>
+Then open: <http://127.0.0.1:8080>
 
 ---
 
@@ -126,10 +116,37 @@ Use the checklist for the run method you want:
 
 ---
 
-## 📦 Run Locally (Poetry)
+## 📦 Install (Poetry)
 
+## 📦 Install (Poetry)
+
+# Printclaw
+
+## What is Printclaw?
+Printclaw is a local-first printer troubleshooting app with a real web GUI and CLI. It diagnoses printer issues, suggests fixes, and exports helpdesk-ready reports.
+
+## Why it exists
+Printer outages are noisy and expensive. Printclaw gives fast, safe, repeatable diagnostics for home, office, and MSP support teams.
+
+## Features
+- Dark dashboard GUI on localhost.
+- Local sqlite session history.
+- Export reports in JSON, TXT, and Markdown.
+- Safe-mode defaults with confirmation-driven fixes.
+- Skills system for printer, spooler, queue, and network checks.
+- Knowledgebase search for vendor and error guidance.
+
+## Screenshots 
+Run the app and capture `/` after diagnostics.
+
+## Install (Poetry)
 ```bash
 poetry install
+```
+
+## 🌐 Run Web GUI
+
+```bash
 poetry run printclaw web
 ```
 
@@ -143,6 +160,17 @@ Use Docker Compose if you want to run Printclaw in a containerized local environ
 
 ### 1) Build and start
 
+## Run Web GUI
+```bash
+poetry run printclaw web
+```
+Open `http://127.0.0.1:8080`.
+
+## Docker Compose Setup and Run
+
+Use Docker Compose if you want a containerized local run without managing a Poetry environment.
+
+### 1) Build and start
 ```bash
 docker compose up --build
 ```
@@ -153,6 +181,9 @@ Open: <http://127.0.0.1:8080>
 
 ### 3) Stop containers
 
+Go to `http://127.0.0.1:8080`.
+
+### 3) Stop containers
 ```bash
 docker compose down
 ```
@@ -165,6 +196,7 @@ docker compose up --build -d
 
 ### 5) Optional: follow logs
 
+### 5) Optional: view logs
 ```bash
 docker compose logs -f
 ```
@@ -184,6 +216,9 @@ poetry run printclaw diagnose --export md
 ```bash
 poetry run printclaw scan
 poetry run printclaw diagnose
+poetry run printclaw diagnose --export json
+poetry run printclaw diagnose --export txt
+poetry run printclaw diagnose --export md
 poetry run printclaw sessions list
 poetry run printclaw sessions show <id>
 poetry run printclaw sessions export <id> --format json
@@ -239,6 +274,35 @@ Supported formats:
 
 Knowledgebase files are YAML and use entries with:
 
+## Run CLI Diagnostics
+```bash
+poetry run printclaw diagnose --export json
+poetry run printclaw diagnose --export txt
+poetry run printclaw diagnose --export md
+```
+
+## Safe Mode vs Apply Mode
+- **SAFE_MODE** (default): no destructive action runs without explicit confirmation.
+- **APPLY_MODE**: reserved for confirmed remediation workflows.
+
+## How the Skill System Works
+Skills implement `BaseSkill` and register in `SkillRegistry`. The agent runs skills, aggregates results, classifies issues, and proposes fixes.
+
+## How Session History Works
+Every diagnostic run is saved to sqlite with session payloads, including host context, issues, and recommendations.
+
+## How Export Works
+Reports are generated from saved sessions and exported as JSON/TXT/MD into `printclaw/reports/`.
+
+## How to Add New Skills
+1. Add a module under `printclaw/skills/...`.
+2. Inherit `BaseSkill`.
+3. Return `SkillResult` with evidence.
+4. Register the skill in `PrintclawAgent`.
+
+## Knowledgebase Format
+Knowledgebase files are YAML with:
+- `entries[]`
 - `symptoms`
 - `probable_cause`
 - `recommended_fix_steps[]`
@@ -277,6 +341,23 @@ Start the web UI and capture the dashboard after running diagnostics.
 
 ## 🧾 Example Ticket Output
 
+## Roadmap
+- Electron wrapper for desktop packaging.
+- Optional LLM reasoning with strict opt-in prompts.
+- Expanded vendor-specific live checks.
+
+## License
+MIT.
+
+## Example Commands
+```bash
+poetry install
+poetry run printclaw web
+poetry run printclaw diagnose --export json
+poetry run printclaw sessions list
+```
+
+## Example ticket output
 ```text
 Helpdesk Summary
 Evidence:
@@ -290,40 +371,6 @@ Next Actions:
 - Electron desktop wrapper for packaged distribution.
 - Optional LLM reasoning with strict opt-in behavior.
 - Expanded vendor/device-specific diagnostic skills.
-
-
-## 🌍 GitHub Pages: Static Landing Page
-
-Yes — you can publish a **static landing page** for Printclaw on GitHub Pages.
-
-> Important: GitHub Pages can host static files only.
-> It **cannot** run the FastAPI backend, diagnostics engine, or CLI.
-
-Use it for:
-
-- Product overview
-- Feature highlights
-- Screenshots/GIFs
-- Install/run instructions
-- Link to this repository/releases
-
-Simple setup:
-
-1. Create a `docs/` folder with `index.html` (or use a static site generator).
-2. Commit and push to `main`.
-3. In GitHub → **Settings → Pages**:
-   - Source: `Deploy from a branch`
-   - Branch: `main`
-   - Folder: `/docs` (or `/root` if preferred)
-4. Save and wait for deployment.
-
-Result URL:
-
-```text
-https://<your-username>.github.io/<repo-name>/
-```
-
-For a live app demo, use a real app host (VM/container platform) instead of GitHub Pages.
 
 ## 📜 License
 
